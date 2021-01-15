@@ -1,0 +1,125 @@
+.sit {
+  width: 39px;
+  height: 39px;
+  background-color: rgb(235, 235, 235);
+  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius:8px;
+}
+
+.sitLabel{
+  font-weight: bold;
+  color:#444;
+  font-size: 7px;
+  text-align: center; 
+}
+
+.sit:hover {
+  background-color:#fff;
+}
+
+.notAllowed {
+  opacity:0;
+}
+
+.taken {
+  background-color: rgb(150, 240, 150);
+}
+
+.taken:hover {
+  background-color: rgb(150, 240, 150);
+}
+
+
+
+.sit:hover .sitNameVisible {
+  display: block;
+  z-index: 500;
+}
+
+.sitNameVisible:hover {
+  display: block;
+}
+
+.rot1{
+  transform:rotate(-90deg)
+}
+
+.rot2{
+  transform:rotate(-180deg)
+}
+
+.rot3{
+  transform: rotate(-270deg)
+}
+
+
+/* .sitLabel {
+  position: absolute;
+  top: 5px;
+  left: -14px;
+  display: none;
+  min-width: 90px;
+  padding: 3px;
+  border: 1px solid #777;
+  background-color: #ccc;
+  font-size: 9px;
+  font-weight: bold;
+  z-index: 18;
+}
+
+.sitLabelLeft {
+  left: -44px;
+}
+.sitLabelTop {
+  transform: rotate(-90deg);
+  transform-origin: left top;
+  left: 6px;
+  top: 36px;
+}
+
+.sitLabelBottom {
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  top: 64px;
+  left: 24px;
+}
+
+.sitLabelVisible {
+  display: block;
+}
+
+
+.rotmin180 {
+  transform: rotate(-180deg);
+}
+
+.rot180 {
+  transform: rotate(180deg);
+}
+
+.top2 {
+  transform: rotate(90deg);
+  top: -65px;
+  left: 24px;
+}
+
+.bottom2 {
+  transform: rotate(90deg);
+  top: -13px;
+  left: 6px;
+}
+
+.bottom3 {
+  transform: rotate(90deg);
+  top: -13px;
+  left: 6px;
+}
+
+.top3 {
+  left: 24px;
+  top: -65px;
+  transform: rotate(90deg);
+} */

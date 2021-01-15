@@ -1,0 +1,94 @@
+.input {
+  width: 40%;
+}
+
+.sectionName {
+  margin: 7% 0 5%;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.chooseTableTypesContainer {
+  display: Flex;
+  justify-content: space-between;
+}
+
+.chooseTableType {
+  flex-basis: 40%;
+}
+
+.acceptCheckbox {
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+}
+
+.checkboxName {
+  font-size: 20px;
+}
+
+.chooseTablesNumber {
+  display: flex;
+  justify-content: space-between;
+}
+
+.numbInput {
+  flex-basis: 40%;
+  color: #ccc;
+}
+
+.enabled {
+  color: inherit;
+}
+
+.button {
+  width: 45%;
+  background-color: #4682b4;
+  position: relative;
+  top: 24vh;
+  left: 0;
+  font-size: 18px;
+}
+
+.errorBox {
+  top: 53vh;
+  left: 42vw;
+  display: none;
+}
+
+.errorVisible {
+  display: block;
+}
+
+@media (min-width: 1100px) {
+  .button {
+    top: 19vh;
+    width: 40%;
+  }
+
+  .checkboxName {
+    padding-bottom: 2px;
+  }
+
+  .errorBox {
+    top: 51vh;
+    left: 39vw;
+  }
+}
+
+@media (min-width: 1150px) {
+  .errorBox {
+    left: 36vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .button {
+    top: 16vh;
+  }
+
+  .errorBox {
+    left: 35vw;
+    top: 48.5vh;
+  }
+}

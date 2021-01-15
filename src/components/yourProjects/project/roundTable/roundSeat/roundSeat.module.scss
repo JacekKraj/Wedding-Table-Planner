@@ -1,0 +1,45 @@
+.seat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 39px;
+  height: 39px;
+  border-radius: 8px;
+  background-color: black;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid #555;
+  z-index: 1;
+}
+
+.seat:hover {
+  background-color: #fff;
+}
+
+.taken {
+  background-color: rgb(150, 240, 150);
+}
+
+.taken:hover {
+  background-color: rgb(150, 240, 150);
+}
+
+.seatLabel{
+  font-weight: bold;
+  color:#444;
+  font-size: 7px;
+  text-align: center; 
+  transform:rotate(60deg)
+}
+
+.seatLabelVisible {
+  display: block;
+}
+
+.seat:hover .seatNameVisible {
+  display: block;
+  bottom: 17px;
+  left: 17px;
+}

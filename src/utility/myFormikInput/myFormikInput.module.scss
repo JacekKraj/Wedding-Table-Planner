@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  position: relative;
+}
+
+.error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 4px;
+  background-color: #222;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.label {
+  padding-bottom: 2px;
+  padding-left: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media (min-width: 1100px) {
+  .container {
+    margin-top: 28px;
+  }
+  .label {
+    padding-bottom: 3px;
+    padding-left: 3px;
+  }
+}

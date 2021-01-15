@@ -1,0 +1,60 @@
+.container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  height: 235px;
+  border-radius: 8px;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+}
+
+.container p {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.containerVisible {
+  display: flex;
+}
+
+.buttons {
+  width: 70%;
+  display: Flex;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 35%;
+  font-size: 18px;
+}
+
+.btnSave {
+  background-color: #4682b4;
+}
+
+.btnLeave {
+  background-color: #ca3433;
+}
+
+@media (min-width: 1300px) {
+  .container {
+    height: 225px;
+  }
+
+  .btn {
+    width: 40%;
+  }
+}

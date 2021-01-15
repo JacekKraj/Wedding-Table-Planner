@@ -1,0 +1,41 @@
+.container {
+  position: absolute;
+  background-color: #aaa;
+  border: 1px solid #555;
+  padding: 0;
+  border-radius: 50%;
+  cursor: move;
+}
+
+.tableFunctions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 21;
+  cursor: default;
+  transform: translate(-50%, -50%);
+}
+
+.tableFunctions > i {
+  color: #444;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.functions {
+  position: absolute;
+  display: none;
+  bottom: 10px;
+  left: 10px;
+  width: 130px;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background-color: rgba(150, 150, 150, 0.95);
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  transform-origin: left bottom;
+}
+
+.tableFunctions:hover .functions {
+  display: flex;
+}

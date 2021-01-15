@@ -1,0 +1,71 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.inputsSection {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tableSizeInputs {
+  flex-basis: 35%;
+}
+
+.tableSizeInputs div {
+  width: 60%;
+}
+
+.caption {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.tablePartsInputs {
+  flex-basis: 55%;
+}
+
+.button {
+  width: 30%;
+  background-color: #ca3433;
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  font-size: 18px;
+}
+
+.tableCheckboxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 18vh;
+  margin-top: 25px;
+}
+
+.errorBox {
+  display: none;
+  position: absolute;
+  top: 68%;
+  left: 46%;
+}
+
+.errorBoxVisible {
+  display: block;
+}
+
+@media (min-width: 1150px) {
+  .errorBox {
+    top: 64%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .errorBox {
+    width: 27vw;
+  }
+}

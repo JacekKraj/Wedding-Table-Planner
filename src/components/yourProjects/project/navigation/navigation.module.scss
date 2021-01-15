@@ -1,0 +1,165 @@
+.container {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  left: 0;
+  width: 80px;
+
+  z-index: 999999;
+  padding: 15px 0px;
+  background-color: #ccc;
+}
+
+.containerFull {
+  width: 220px;
+}
+
+.logo {
+  display: block;
+  font-size: 32px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Grandstander", cursive;
+  font-weight: bold;
+  text-align: center;
+  padding: 3px 0;
+  border-bottom: 2px solid #ddd;
+  color: #333;
+}
+
+.fullLogo {
+  display: block;
+  font-size: 32px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Grandstander", cursive;
+  font-weight: bold;
+  text-align: left;
+  color: #333;
+  padding: 3px 0 3px 29px;
+  border-bottom: 2px solid #ddd;
+}
+
+.pageButtons {
+  padding: 10px 0;
+  background-color: #bbb;
+  border-bottom: 2px solid #ddd;
+}
+
+.pageButton {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  padding-left: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.pageButton:hover {
+  background-color: #ccc;
+}
+
+.pageButton i {
+  width: 22px;
+  height: 22px;
+  font-size: 22px;
+  color: #333;
+  margin-right: 15px;
+}
+
+.rectangle {
+  width: 17px;
+  height: 17px;
+  background-color: #333;
+  margin-right: 20px;
+}
+
+.round {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: #333;
+  margin-right: 20px;
+}
+
+.buttonName {
+  display: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.buttonNameVisible {
+  display: block;
+}
+
+.returnButton {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  padding-left: 30px;
+  border-bottom: 2px solid #ddd;
+  position: relative;
+}
+
+.returnButton:hover {
+  background-color: #bbb;
+  cursor: pointer;
+}
+
+.returnButton i {
+  width: 22px;
+  height: 22px;
+  font-size: 22px;
+  color: #333;
+  margin-right: 15px;
+}
+
+.turner {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  padding-left: 33px;
+  border-bottom: 2px solid #ddd;
+}
+
+.turner:hover {
+  background-color: #bbb;
+  cursor: pointer;
+}
+
+.turner i {
+  font-size: 30px;
+}
+
+.turnerOff {
+  padding-left: 180px;
+}
+
+.buttonInfo {
+  display: none;
+  position: absolute;
+  top: 12px;
+  left: 100px;
+  padding: 5px 8px;
+  color: #ddd;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.info {
+  display: none;
+}
+
+.return {
+  top: 7px;
+  white-space: nowrap;
+}
+
+.pageButton:hover .buttonInfo {
+  display: block;
+}
+
+.returnButton:hover .buttonInfo {
+  display: block;
+}

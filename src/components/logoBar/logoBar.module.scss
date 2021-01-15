@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 2% 5%;
+  border-bottom: 1px solid #ccc;
+  font-style: italic;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Grandstander", cursive;
+  font-size: 28px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  text-decoration: none;
+  color: #666;
+  margin-left: 24px;
+  align-items: center;
+  font-size: 18px;
+}
+
+.text {
+  margin-left: 4px;
+  padding-bottom: 3px;
+}
+
+@media (min-width: 1100px) {
+  .link {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container {
+    padding: 1.5% 5%;
+  }
+
+  .text {
+    font-weight: bold;
+    margin-left: 5px;
+  }
+}

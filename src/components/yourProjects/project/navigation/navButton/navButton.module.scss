@@ -1,0 +1,51 @@
+.pageButton {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  padding-left: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.pageButton:hover {
+  background-color: #ccc;
+}
+
+.pageButton i {
+  width: 22px;
+  height: 22px;
+  font-size: 22px;
+  color: #333;
+  margin-right: 15px;
+}
+
+.buttonName {
+  display: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.buttonNameVisible {
+  display: block;
+}
+
+.info {
+  display: none;
+  white-space: nowrap;
+}
+
+.pageButton:hover .buttonInfo {
+  display: block;
+}
+
+.buttonInfo {
+  display: none;
+  position: absolute;
+  top: 12px;
+  left: 100px;
+  padding: 5px 8px;
+  color: #ddd;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  border-radius: 4px;
+}

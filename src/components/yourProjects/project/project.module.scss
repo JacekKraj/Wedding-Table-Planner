@@ -1,0 +1,27 @@
+.container {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+}
+
+.toast i {
+  padding-top: 2px;
+  color:rgb(0,150,0);
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+
+@media print {
+  @page { size: landscape; }
+}
+
+
+

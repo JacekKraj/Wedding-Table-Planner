@@ -1,0 +1,30 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 2% 9%;
+  z-index: 150;
+  width: 80%;
+  height: 80vh;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+@media (min-width: 1150px) {
+  .modal {
+    width: 75%;
+    height: 75vh;
+  }
+}
+
+@media (min-width: 1300px) {
+  .modal {
+    width: 60%;
+  }
+}

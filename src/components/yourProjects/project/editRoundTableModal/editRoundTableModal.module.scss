@@ -1,0 +1,48 @@
+.container {
+  width: 35%;
+  height: 100%;
+  position: relative;
+}
+
+.container div {
+  width: 60%;
+}
+
+.caption {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.button {
+  width: 90%;
+  background-color: #ca3433;
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  font-size: 18px;
+}
+
+.errorBox {
+  display: none;
+  position: absolute;
+  top: 68%;
+  left: 46%;
+}
+
+.errorBoxVisible {
+  display: block;
+}
+
+@media (min-width: 1150px) {
+  .errorBox {
+    top: 64%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .errorBox {
+    width: 27vw;
+  }
+}
