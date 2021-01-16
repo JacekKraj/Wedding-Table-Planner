@@ -4,19 +4,18 @@ import fire from "./fireConfig";
 import firebase from "firebase";
 import { connect } from "react-redux";
 import * as actions from "./actions/index";
-import 'react-toastify/dist/ReactToastify.css';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Spinner from "./components/UI/spinner/Spinner";
 import Project from "./components/yourProjects/project/Project";
-import { showFailToast } from './utility/Toasts/toasts';
-import classes from './app.css'
+import { showFailToast } from "./utility/Toasts/toasts";
+import classes from "./app.css";
 
 export const ProjectsContext = React.createContext(null);
 
-toast.configure()
-
+toast.configure();
 
 const App = (props) => {
   const [projectsRoutes, setProjectsRoutes] = useState(null);
@@ -35,6 +34,14 @@ const App = (props) => {
 
   const YourProjects = React.lazy(() => {
     return import("./components/yourProjects/YourProjects");
+  });
+
+  const Help = React.lazy(() => {
+    return import("./components/help/Help");
+  });
+
+  const Contact = React.lazy(() => {
+    return import("./components/contact/Contact");
   });
 
   useEffect(() => {
@@ -58,13 +65,7 @@ const App = (props) => {
                   exact
                   path={`/${el}`}
                   render={(props) => (
-                    <Project
-                      projectsNames={arr}
-                      {...props}
-                      path={el}
-                      projectData={projectData}
-                      userEmail={firebase.auth().currentUser.email}
-                    />
+                    <Project projectsNames={arr} {...props} path={el} projectData={projectData} userEmail={firebase.auth().currentUser.email} />
                   )}
                 />
               );
@@ -72,7 +73,7 @@ const App = (props) => {
             setProjectsRoutes(projRoutes);
           })
           .catch((error) => {
-            showFailToast(<div className={classes.toast}>{error.message}</div>)
+            showFailToast(<div className={classes.toast}>{error.message}</div>);
           });
       } else {
         localStorage.removeItem("user");
@@ -87,18 +88,15 @@ const App = (props) => {
   });
 
   const reloadProjects = useCallback((random) => {
-    setReloadProjectsCondition(random)
-  }, [])
-
+    setReloadProjectsCondition(random);
+  }, []);
 
   let routes = (
     <Switch>
       <Route path="/" exact render={(props) => <Login {...props} />} />
-      <Route
-        path="/register"
-        exact
-        render={(props) => <Register {...props} />}
-      />
+      <Route path="/register" exact render={(props) => <Register {...props} />} />
+      <Route path="/help" exact render={(props) => <Help {...props} />} />
+      <Route path="/contact" exact render={(props) => <Contact {...props} />} />
       <Redirect to="/" />
     </Switch>
   );
@@ -107,20 +105,15 @@ const App = (props) => {
     <Switch>
       <ProjectsContext.Provider value={{ projectsNames: projectsNames, reloadProjects: reloadProjects }}>
         {projectsRoutes ? projectsRoutes : null}
-        <Route
-          path="/yourProjects"
-          exact
-          render={(props) => (
-            <YourProjects {...props} />
-          )}
-        />
-
+        <Route path="/yourProjects" exact render={(props) => <YourProjects {...props} />} />
+        <Route path="/help" exact render={(props) => <Help {...props} />} />
+        <Route path="/contact" exact render={(props) => <Contact {...props} />} />
         <Redirect to="/yourProjects" />
       </ProjectsContext.Provider>
     </Switch>
   ) : (
-      routes
-    );
+    routes
+  );
 
   return (
     <Fragment>
