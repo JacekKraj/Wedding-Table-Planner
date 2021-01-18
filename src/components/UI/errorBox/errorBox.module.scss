@@ -3,13 +3,7 @@
   width: 35vw;
   height: 12vh;
   background-color: #dd191a;
-  background-image: repeating-linear-gradient(
-    -75deg,
-    #d01e1e,
-    #d01e1e 15px,
-    #dd191a 10px,
-    #dd191a 30px
-  );
+  background-image: repeating-linear-gradient(-75deg, #d01e1e, #d01e1e 15px, #dd191a 10px, #dd191a 30px);
   margin-top: 45px;
   padding: 15px 25px;
   color: rgb(255, 255, 255);
@@ -19,6 +13,6 @@
 
 @media (min-width: 1200px) {
   .errorBox {
-    width: 32vw;
+    width: 22vw;
   }
 }

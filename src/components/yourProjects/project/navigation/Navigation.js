@@ -3,7 +3,6 @@ import { useHistory } from "react-router";
 import classnames from "classnames";
 import { connect } from "react-redux";
 import { useReactToPrint } from "react-to-print";
-import ReactToPrint from "react-to-print";
 
 import classes from "./navigation.module.scss";
 import YourProfile from "./yourProfile/YourProfile";

@@ -52,7 +52,6 @@ export const register = (personalData) => {
           .then((response) => {
             dispatch(registerEnd());
             dispatch(setRegisteredStart());
-            alert("Verification email has been sent to your adress.");
             dispatch(setRegisteredEnd());
           })
           .catch((error) => {
@@ -87,6 +86,7 @@ export const authenticateFail = (error) => {
 export const authenticate = (personalData) => {
   return (dispatch) => {
     dispatch(authenticateStart());
+
     fire
       .auth()
       .signInWithEmailAndPassword(personalData.email, personalData.password)
@@ -96,12 +96,6 @@ export const authenticate = (personalData) => {
       .catch((error) => {
         dispatch(authenticateFail(error.message));
       });
-  };
-};
-
-export const tryAutoLogin = () => {
-  return {
-    type: actionTypes.TRY_AUTO_LOGIN,
   };
 };
 

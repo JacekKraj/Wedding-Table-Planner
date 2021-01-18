@@ -20,7 +20,7 @@ const authenticationReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        errMessage: null
+        errMessage: null,
       };
     case actionTypes.REGISTER_FAIL:
       return {
@@ -48,7 +48,7 @@ const authenticationReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        errMessage: null
+        errMessage: null,
       };
     case actionTypes.AUTHENTICATE_END:
       return {
@@ -63,22 +63,18 @@ const authenticationReducer = (state = initialState, action) => {
         errMessage: action.error,
         authenticated: false,
       };
-    case actionTypes.TRY_AUTO_LOGIN:
-      return {
-        ...state,
-        authenticated: true,
-      };
 
     case actionTypes.LOGOUT:
       fire.auth().signOut();
-      localStorage.removeItem("user")
       return {
         ...state,
         authenticated: false,
+        fireUser: null,
       };
     case actionTypes.ADD_FIRE_USER:
       return {
         ...state,
+        authenticated: true,
         fireUser: action.fireUser,
       };
     default:

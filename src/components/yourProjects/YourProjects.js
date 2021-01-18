@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
 import { connect } from "react-redux";
-import { toast, Zoom } from "react-toastify";
 import firebase from "firebase";
 
 import MainPageLogoBar from "./../mainPageLogoBar/MainPageLogoBar";

@@ -89,6 +89,7 @@ const mapStateToProps = (state) => {
   return {
     errMessage: state.auth.errMessage,
     isLoading: state.auth.loading,
+    fireUser: state.auth.fireUser,
   };
 };
 

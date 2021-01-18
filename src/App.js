@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import * as actions from "./actions/index";
 import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 import Spinner from "./components/UI/spinner/Spinner";
 import Project from "./components/yourProjects/project/Project";
@@ -45,47 +44,46 @@ const App = (props) => {
   });
 
   useEffect(() => {
+    props.onAddfireUser(null);
     fire.auth().onAuthStateChanged((response) => {
       if (response) {
-        const firebaseUser = firebase.auth().currentUser;
-        props.onAddfireUser(firebaseUser);
-        localStorage.setItem("user", firebaseUser);
-        firebase
-          .database()
-          .ref(`${firebaseUser.uid}`)
-          .once("value")
-          .then((snapshot) => {
-            setProjectsNames(snapshot.val());
-            const arr = snapshot.val() ? Array.from(Object.keys(snapshot.val())) : [];
-            projRoutes = arr.map((el, index) => {
-              const projectData = snapshot.val()[el];
-              return (
-                <Route
-                  key={index}
-                  exact
-                  path={`/${el}`}
-                  render={(props) => (
-                    <Project projectsNames={arr} {...props} path={el} projectData={projectData} userEmail={firebase.auth().currentUser.email} />
-                  )}
-                />
-              );
+        if (firebase.auth().currentUser.emailVerified) {
+          const firebaseUser = firebase.auth().currentUser;
+          props.onAddfireUser(firebaseUser);
+          firebase
+            .database()
+            .ref(`${firebaseUser.uid}`)
+            .once("value")
+            .then((snapshot) => {
+              setProjectsNames(snapshot.val());
+              const arr = snapshot.val() ? Array.from(Object.keys(snapshot.val())) : [];
+              projRoutes = arr.map((el, index) => {
+                const projectData = snapshot.val()[el];
+                return (
+                  <Route
+                    key={index}
+                    exact
+                    path={`/${el}`}
+                    render={(props) => (
+                      <Project projectsNames={arr} {...props} path={el} projectData={projectData} userEmail={firebase.auth().currentUser.email} />
+                    )}
+                  />
+                );
+              });
+              setProjectsRoutes(projRoutes);
+            })
+            .catch((error) => {
+              showFailToast(<div className={classes.toast}>{error.message}</div>);
             });
-            setProjectsRoutes(projRoutes);
-          })
-          .catch((error) => {
-            showFailToast(<div className={classes.toast}>{error.message}</div>);
-          });
+        } else {
+          props.onLogout();
+          showFailToast(<div className={classes.toast}>Your email address hasn't been verified. Check your email.</div>);
+        }
       } else {
-        localStorage.removeItem("user");
+        props.onLogout();
       }
     });
   }, [reloadProjectsCondition]);
-
-  useEffect(() => {
-    if (localStorage.getItem("user")) {
-      props.onTryAutoLogin();
-    }
-  });
 
   const reloadProjects = useCallback((random) => {
     setReloadProjectsCondition(random);
@@ -147,8 +145,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onTryAutoLogin: () => dispatch(actions.tryAutoLogin()),
     onAddfireUser: (fireUser) => dispatch(actions.addFireUser(fireUser)),
+    onLogout: () => dispatch(actions.logout()),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(App);
