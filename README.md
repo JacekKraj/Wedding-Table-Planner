@@ -1,3 +1,7 @@
+Feel free to use this account to authenticate on page:
+Login: jacekkrajewski12@wp.pl 
+Password: asdasd
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
